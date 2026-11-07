@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helpdesk FAQ Admin</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:40px auto;padding:0 16px}
+input,textarea,button{display:block;width:100%;box-sizing:border-box;padding:10px;margin:8px 0}
+textarea{min-height:80px}</style></head>
+<body>
+<h1>Add FAQ</h1>
+<p>Local demo admin form. Set HELPDESK_ADMIN_PASSWORD before running.</p>
+{% with messages = get_flashed_messages() %}{% if messages %}<ul>{% for m in messages %}<li>{{m}}</li>{% endfor %}</ul>{% endif %}{% endwith %}
+<form method="post">
+<label>Admin password</label><input type="password" name="password" required>
+<label>Question</label><input name="question" required>
+<label>Answer</label><textarea name="answer" required></textarea>
+<label>Intent/category (e.g. password_reset)</label><input name="intent" required>
+<label>Keywords (space separated)</label><input name="keywords">
+<button type="submit">Save FAQ</button>
+</form>
+<p><a href="/">Back to chatbot</a></p>
+</body></html>

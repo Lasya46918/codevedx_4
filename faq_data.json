@@ -1,0 +1,7 @@
+[
+  {"intent":"password_reset","question":"How do I reset my password?","answer":"Use the Forgot Password link on the official login page.","keywords":"password reset login forgot account"},
+  {"intent":"contact_support","question":"How do I contact support?","answer":"Contact the support team using the official helpdesk email provided by your organization.","keywords":"support helpdesk contact email"},
+  {"intent":"assignment_submission","question":"How can I submit my assignment?","answer":"Upload your assignment through the official submission portal and check for a confirmation.","keywords":"assignment submit upload portal coursework"},
+  {"intent":"attendance","question":"Where can I see my attendance?","answer":"Open the attendance section of your student or employee portal.","keywords":"attendance presence absent portal"},
+  {"intent":"profile_update","question":"How do I update my profile?","answer":"Open account settings, update the permitted fields, and save your changes.","keywords":"profile update account settings change"}
+]

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internal Helpdesk Chatbot</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;line-height:1.5}
+input,button{padding:10px;margin:5px 0;width:100%;box-sizing:border-box}
+button{cursor:pointer} .card{border:1px solid #ccc;border-radius:10px;padding:16px;margin-top:16px}
+small{color:#555}
+</style></head>
+<body>
+<h1>Internal Helpdesk Chatbot</h1>
+<p>Ask a common question about accounts, assignments or attendance.</p>
+{% with messages = get_flashed_messages() %}{% if messages %}<ul>{% for m in messages %}<li>{{m}}</li>{% endfor %}</ul>{% endif %}{% endwith %}
+<form action="/ask" method="post">
+<label for="question">Your question</label>
+<input id="question" name="question" required value="{{ question or '' }}" placeholder="How do I reset my password?">
+<button type="submit">Ask chatbot</button>
+</form>
+{% if result %}
+<div class="card">
+<h2>Answer</h2><p>{{ result.answer }}</p>
+<small>Matched intent: {{ result.intent }} | Similarity score: {{ "%.2f"|format(result.score) }}</small>
+</div>
+{% endif %}
+<p><a href="/admin">Admin: update FAQs</a></p>
+<p><small>Educational demo. Do not enter confidential or personal information.</small></p>
+</body></html>
